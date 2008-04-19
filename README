@@ -1,0 +1,26 @@
+CkFu
+====
+
+Where does the name ck_fu come from? It's a play on attachment_fu and I think curse words are funny.
+
+This will put a bar across the top of your screen (except in production) that shows the environment, databases, revision, etc. Why do we
+need something like this? because the development and staging sites often look identical to the production site. This makes it easy to tell
+the difference between the sites at a glance.
+
+Example
+=======
+
+* Run rake ck_fu:copy_styles
+* Add ck_fu.css to your list of stylesheets
+* Add the following directly below your <body> tag
+<%= ck_fu %>
+
+More Advanced Usage
+===================
+
+<%= ck_fu(:production => {:show_if => current_user.admin?, :show => true}) %>
+
+
+
+
+Copyright (c) 2008 umlatte LLC, released under the MIT license

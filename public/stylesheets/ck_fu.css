@@ -1,0 +1,16 @@
+#ck_fu {
+	color: white;
+	font-size: 13px;
+	padding: 5px;
+	margin: 0;
+	text-align: center;
+}
+.production {
+	display: none;
+}
+.staging {
+	background: blue;
+}
+.development {
+	background: green;
+}
