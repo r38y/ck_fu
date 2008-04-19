@@ -1,5 +1,5 @@
 #ck_fu {
-	color: #fff;
+	color: white;
 	font-size: 13px;
 	padding: 5px;
 	margin: 0;
@@ -9,8 +9,8 @@
 	display: none;
 }
 .staging {
-	background: #00f;
+	background: blue;
 }
 .development {
-	background: #0f0;
+	background: green;
 }
