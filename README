@@ -18,9 +18,6 @@ Example
 More Advanced Usage
 ===================
 
-<%= ck_fu(:production => {:show_if => current_user.admin?, :show => true}) %>
-
-
-
+NYI
 
 Copyright (c) 2008 umlatte LLC, released under the MIT license
