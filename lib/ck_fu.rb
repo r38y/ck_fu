@@ -5,7 +5,7 @@ module Umlatte
       xhtml = Builder::XmlMarkup.new :target => out=(''), :indent => 2 # Because I can.
       xhtml.div :id => 'ck_fu', :class => RAILS_ENV do
         xhtml.text! "Env: #{RAILS_ENV.titlecase}"
-        xhtml.text! " | Current DB: #{ActiveRecord::Base.connection.current_database}" if ActiveRecord::Base.connection.respond_to?(:current_databases)
+        xhtml.text! " | Current DB: #{ActiveRecord::Base.connection.current_database}" if ActiveRecord::Base.connection.respond_to?(:current_database)
         xhtml.text! " | Revision: #{deployed_revision}" unless deployed_revision.blank?
       end
       return out
