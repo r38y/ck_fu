@@ -2,7 +2,7 @@ module Umlatte
   module CkFu
     def ck_fu(options={})
       separator = options[:separator] || "&sect;"
-      do_not_show = options[:if] == false || RAILS_ENV == 'production'
+      do_not_show = !options[:if] || RAILS_ENV == 'production'
       links = options[:links] || []
       return "" if do_not_show
       # xhtml = Builder::XmlMarkup.new :target => out=(''), :indent => 2 # Because I can.
