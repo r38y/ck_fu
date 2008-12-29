@@ -4,9 +4,10 @@
 	padding: 5px;
 	margin: 0;
 	text-align: center;
+	font-family: Helvetica, sans-serif;
 }
-.production {
-	display: none;
+#ck_fu a {
+	color: white;
 }
 .staging {
 	background: blue;
