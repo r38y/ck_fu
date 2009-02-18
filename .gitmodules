@@ -1,0 +1,3 @@
+[submodule "website"]
+	path = website
+	url = git@github.com:r38y/ck_fu.git
