@@ -1,0 +1,26 @@
+/* Fixes
+============================================= */
+.clearfix:after {
+    content: "."; 
+    display: block; 
+    height: 0; 
+    clear: both; 
+    visibility: hidden;
+}
+
+.clearfix {display: inline-block;}
+
+/* Hides from IE-mac \*/
+* html .clearfix {height: 1%;}
+.clearfix {display: block;}
+/* End hide from IE-mac */
+/* ========================================== */
+
+
+/* use this to set a min-height in IE6
+selector {
+  min-height:500px;
+  height:auto !important;
+  height:500px;
+}
+*/
