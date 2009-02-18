@@ -8,6 +8,36 @@
 		<link href="stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
 	</head>
 	<body>
-		<h1>ck_fu!</h1>
+		<div id="wrapper">
+			<p id="story">Have you ever sat there refreshing your browser wondering why your changes aren't showing up? 
+				Then it it hits you... you have been <strong>refreshing the production site, not your local dev site</strong>. 
+				Yeah, I've been there. <strong>ck_fu to the rescue!</strong></p>
+				
+			<p id="more_info">ck_fu is a simple rails plugin which provides a helper to display some environment info in your browser. 
+				For more information, <a href="http://github.com/r38y/ck_fu">check out the repo on GitHub</a>.</p>
+
+			<div id="dev" class="environment">
+				<h1>Development</h1>
+				<img src="images/dev.jpg" width="1000" height="307" al="ck_fu in development"/>
+				<p>Shows a green bar.</p>
+			</div>
+			
+			<div id="stag" class="environment">
+				<h1>Staging</h1>
+				<img src="images/stag.jpg" width="1000" height="307" al="ck_fu in staging"/>
+				<p>Shows a blue bar with the date of the last deployment.</p>
+			</div>
+			
+			<div id="prod" class="environment">
+				<h1>Production</h1>
+				<img src="images/prod-logged-out.jpg" width="1000" height="307" al="ck_fu in production when the user is logged out"/>
+				<p>Nothing is show in production if the user isn't logged in.</p>
+				
+				<img src="images/prod-logged-in.jpg" width="1000" height="307" al="ck_fu in production when the user is logged in"/>
+				<p>Shows a red bar with the date of the last deployment if the user is logged in and an admin.</p>
+			</div>
+			
+			<p id="credits">an <a href="http://umlatte.com">&uuml;mlatte LLC</a> production</p>
+		</div>
 	</body>
 </html>

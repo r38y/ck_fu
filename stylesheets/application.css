@@ -2,8 +2,66 @@
 ===================================================== */
 	body {
 		font-family: Georgia;
+		background: #BBB;
 	}
 	h1 {
 		font-size: 30px;
+		margin-bottom: 15px;
+	}
+	strong {
+		font-weight: bold;
+	}
+	p {
+		margin: 15px 0;
+		line-height: 140%;
+	}
+	#story {
+		font-size: 24px;
+		margin: 0;
+	}
+	#more_info {
+		background: #EEE;
+		padding: 15px;
+		font-size: 20px;
+		text-align: center;
+		-moz-border-radius: 10px;
+		-webkit-border-radius: 10px;
+	}
+	#more_info a {
+		color: blue;
+	}
+	#more_info a:hover {
+		background: blue;
+		color: white;
+	}
+	#wrapper {
+		width: 1000px;
+		padding: 15px 15px 0 15px;
+		background: white;
+		margin: 15px auto;
+		-moz-border-radius: 10px;
+		-webkit-border-radius: 10px;
+	}
+	.environment {
+		margin: 15px 0 30px;
+	}
+	.environment img {
+		display: block;
+		margin: 15px 0 0;
+	}
+	.environment p {
+		margin: 5px 0 15px;
+		font-style: italic;
+		font-size: 16px;
+		background: url('../images/arrow.png') no-repeat 0 50%;
+		text-indent: 20px;
+	}
+	#prod {
+		margin-bottom: 15px;
+	}
+	#credits {
+		border-top: 1px solid #000;
+		padding: 15px 0;
+		text-align: center;
 	}
 /* ================================================== */
