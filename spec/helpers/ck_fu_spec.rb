@@ -38,10 +38,15 @@ describe Umlatte do
     Rails.stub!(:production?).and_return(true)
     ck_fu.should == ''
   end
-  
+    
   it "should show if :if is true and in production environment" do
     Rails.stub!(:production?).and_return(true)
     ck_fu(:if => true).should == '<div class="test" id="ck_fu">Env: Test &sect; Current DB: </div>'
+  end
+  
+  it "should not show if :if is false and not in production" do
+    Rails.stub!(:production?).and_return(false)
+    ck_fu(:if => false).should == ''
   end
   
   it "should have the current sqlite3 database" do
