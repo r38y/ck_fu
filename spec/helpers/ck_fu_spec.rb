@@ -49,6 +49,11 @@ describe Umlatte do
     ck_fu(:if => false).should == ''
   end
   
+  it "should not show if :if is nil and not in production" do
+    Rails.stub!(:production?).and_return(false)
+    ck_fu(:if => nil).should == ''
+  end
+  
   it "should have the current sqlite3 database" do
     ActiveRecord::Base::configurations[RAILS_ENV]['adapter'] = 'sqlite3'
     ActiveRecord::Base::configurations[RAILS_ENV]['dbfile'] = 'test.sqlite3'

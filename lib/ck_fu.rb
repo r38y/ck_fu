@@ -1,6 +1,6 @@
 module Umlatte
   def ck_fu(options={})
-    return "" if (!options[:if].nil? ? !options[:if] : Rails.production?)
+    return "" if (options.has_key?(:if) ? !options[:if] : Rails.production?)
     separator = options[:separator] || "&sect;"
     content_tag :div, :id => 'ck_fu', :class => RAILS_ENV do
       text = "Env: #{Rails.environment.titlecase}"
