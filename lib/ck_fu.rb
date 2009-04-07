@@ -1,9 +1,9 @@
 module Umlatte
   def ck_fu(options={})
-    return "" if (options.has_key?(:if) ? !options[:if] : Rails.production?)
+    return "" if (options.has_key?(:if) ? !options[:if] : RAILS_ENV == "production")
     separator = options[:separator] || "&sect;"
     content_tag :div, :id => 'ck_fu', :class => RAILS_ENV do
-      text = "Env: #{Rails.environment.titlecase}"
+      text = "Env: #{RAILS_ENV.titlecase}"
       text += " #{separator} Current DB: #{ActiveRecord::Base.connection.current_database}" if ActiveRecord::Base.connection.respond_to?(:current_database)
       text += " #{separator} Current DB: #{ActiveRecord::Base::configurations[RAILS_ENV]['dbfile']}" if ActiveRecord::Base::configurations[RAILS_ENV]['adapter'] == 'sqlite3'
       text += " #{separator} Revision: #{deployed_revision}" if !deployed_revision.blank? && (options[:revision].nil? || options[:revision])
