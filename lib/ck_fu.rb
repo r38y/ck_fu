@@ -6,8 +6,8 @@ module Umlatte
       text = "Env: #{Rails.environment.titlecase}"
       text += " #{separator} Current DB: #{ActiveRecord::Base.connection.current_database}" if ActiveRecord::Base.connection.respond_to?(:current_database)
       text += " #{separator} Current DB: #{ActiveRecord::Base::configurations[RAILS_ENV]['dbfile']}" if ActiveRecord::Base::configurations[RAILS_ENV]['adapter'] == 'sqlite3'
-      text += " #{separator} Revision: #{deployed_revision}" if !deployed_revision.blank? && (options[:revision].nil? || options[:revision])
-      text += " #{separator} Deployed: #{deployed_date}" if !deployed_date.blank? && (options[:date].nil? || options[:date])
+      text += " #{separator} Revision: #{deployed_revision}" if deployed_revision.present? && (options[:revision].nil? || options[:revision])
+      text += " #{separator} Deployed: #{deployed_date}" if deployed_date.present? && (options[:date].nil? || options[:date])
       (options[:links] || []).each do |link|
         text += " #{separator} #{link_to link[0], link[1]}"
       end
