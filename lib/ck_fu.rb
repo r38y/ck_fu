@@ -1,4 +1,4 @@
-module Umlatte
+module Forge38
   def ck_fu(options={})
     return "" if (options.has_key?(:if) ? !options[:if] : Rails.production?)
     separator = options[:separator] || "&sect;"

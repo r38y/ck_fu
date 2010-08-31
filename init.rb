@@ -1,2 +1,3 @@
 require 'ck_fu'
-ActionController::Base.helper(Umlatte)
+
+ActionView::Base.send(:include, Forge38)

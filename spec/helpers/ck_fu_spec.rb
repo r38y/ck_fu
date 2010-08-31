@@ -1,7 +1,7 @@
 require File.dirname(__FILE__) + '/../spec_helper'
-include Umlatte
+include Forge38
 
-describe Umlatte do
+describe Forge38 do
   it "should return a div with an id of ck_fu and class of RAILS_ENV" do
     ck_fu.should == '<div class="test" id="ck_fu">Env: Test &sect; Current DB: </div>'
   end
