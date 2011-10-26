@@ -4,8 +4,10 @@ module Forge38
     separator = html_safe(options[:separator] || "&sect;")
     content_tag :div, :id => 'ck_fu', :class => Rails.env do
       text = "Env: #{Rails.env.titlecase}"
-      text += " #{separator} Current DB: #{ActiveRecord::Base.connection.current_database}" if ActiveRecord::Base.connection.respond_to?(:current_database)
-      text += " #{separator} Current DB: #{ActiveRecord::Base::configurations[Rails.env]['dbfile']}" if ActiveRecord::Base::configurations[Rails.env]['adapter'] == 'sqlite3'
+      if defined?(ActiveRecord)
+        text += " #{separator} Current DB: #{ActiveRecord::Base.connection.current_database}" if ActiveRecord::Base.connection.respond_to?(:current_database)
+        text += " #{separator} Current DB: #{ActiveRecord::Base::configurations[Rails.env]['dbfile']}" if ActiveRecord::Base::configurations[Rails.env]['adapter'] == 'sqlite3'
+      end
       text += " #{separator} Revision: #{deployed_revision}" if deployed_revision.present? && (options[:revision].nil? || options[:revision])
       text += " #{separator} Deployed: #{deployed_date}" if deployed_date.present? && (options[:date].nil? || options[:date])
       (options[:links] || []).each do |link|
