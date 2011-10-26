@@ -4,9 +4,8 @@ module Forge38
     separator = html_safe(options[:separator] || "&sect;")
     content_tag :div, :id => 'ck_fu', :class => Rails.env do
       text = "Env: #{Rails.env.titlecase}"
-      if defined?(ActiveRecord)
-        text += " #{separator} Current DB: #{ActiveRecord::Base.connection.current_database}" if ActiveRecord::Base.connection.respond_to?(:current_database)
-        text += " #{separator} Current DB: #{ActiveRecord::Base::configurations[Rails.env]['dbfile']}" if ActiveRecord::Base::configurations[Rails.env]['adapter'] == 'sqlite3'
+      if current_database_name
+        text += " #{separator} Current DB: #{current_database_name}"
       end
       text += " #{separator} Revision: #{deployed_revision}" if deployed_revision.present? && (options[:revision].nil? || options[:revision])
       text += " #{separator} Deployed: #{deployed_date}" if deployed_date.present? && (options[:date].nil? || options[:date])
@@ -29,5 +28,12 @@ module Forge38
 
   def html_safe(string)
     string.respond_to?(:html_safe) ? string.html_safe : string
+  end
+
+  def current_database_name
+    if defined?(ActiveRecord::Base)
+      return ActiveRecord::Base.connection.current_database if ActiveRecord::Base.connection.respond_to?(:current_database)
+      return ActiveRecord::Base::configurations[Rails.env]['dbfile'] if ActiveRecord::Base::configurations[Rails.env]['adapter'] == 'sqlite3'
+    end
   end
 end
