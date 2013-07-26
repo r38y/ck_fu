@@ -13,8 +13,9 @@ Gem::Specification.new do |spec|
   spec.test_files = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ['lib']
 
-  spec.add_dependency 'activesupport', '>= 3.2'
+  spec.add_dependency 'actionpack', '>= 3.2'
+  # spec.add_dependency 'activesupport', '>= 3.2'
+  spec.add_dependency 'activerecord', '>= 3.2'
 
-  spec.add_development_dependency 'rake'
   spec.add_development_dependency 'rspec', '~> 2.13'
 end

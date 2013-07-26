@@ -1,3 +1,6 @@
+require 'action_view'
+require 'active_record'
+
 module CkFu
   def ck_fu(options={})
     return "" if (options.has_key?(:if) ? !options[:if] : Rails.env.production?)
@@ -37,3 +40,5 @@ module CkFu
     end
   end
 end
+
+ActionView::Base.send(:include, CkFu)
