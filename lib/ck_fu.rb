@@ -1,4 +1,4 @@
-module Forge38
+module CkFu
   def ck_fu(options={})
     return "" if (options.has_key?(:if) ? !options[:if] : Rails.env.production?)
     separator = html_safe(options[:separator] || "&sect;")
